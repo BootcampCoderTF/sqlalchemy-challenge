@@ -11,6 +11,7 @@ import datetime as dt
 #################################################
 # Database Setup
 #################################################
+
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
@@ -30,9 +31,8 @@ session = Session(engine)
 #################################################
 # Flask Setup
 #################################################
+
 app = Flask(__name__)
-
-
 
 #################################################
 # Flask Routes
@@ -59,14 +59,14 @@ def home():
         f"For Temperature OBServations of the most-active Station:<br/>"
         f"/api/v1.0/tobs<br/>"
         f"<br/>"
+        # User defined Queries 
         f"The following links can be used to find the minimum temperature, the average temperature, and the maximum temperature<br/>"
+        f"<br/>"
         f"To Search the API from a SPECIFIC START date to the MOST RECENT date (replace 'YYYY-MM-DD' with the date you wish to query!):<br/>"
         f"/api/v1.0/YYYY-MM-DD<br/>"
         f"<br/>"
-        f"To Search the API from a SPECIFIC START date to a SPECIFIC END date (replace 'YYYY-MM-DD' with the start date you wish to query first end the end date you wish to query last!):<br/>"
-        f"/api/v1.0/YYYY-MM-DD/YYYY-MM-DD"
-        # User defined Queries
-        
+        f"To Search the API from a SPECIFIC START date to a SPECIFIC END date (replace 'YYYY-MM-DD' with the start date you wish to query first and the end date you wish to query last!):<br/>"
+        f"/api/v1.0/YYYY-MM-DD/YYYY-MM-DD"        
     )
 
 # Precipitation route
